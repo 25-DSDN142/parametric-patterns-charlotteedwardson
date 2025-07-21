@@ -1,7 +1,8 @@
 //your parameter variables go here!
-let rect_width  = 20;
-let rect_height = 200;
-
+let ellipseX  = 100;
+let ellipseY = 100;
+var RingSize = 100; // 150
+var CentreSize = 30;
 
 function setup_wallpaper(pWallpaper) {
   pWallpaper.output_mode(DEVELOP_GLYPH);
@@ -17,9 +18,42 @@ function setup_wallpaper(pWallpaper) {
 }
 
 function wallpaper_background() {
-  background(250, 170, 150); //light pink colour
+  background(255, 200, 170); //very light pink colour
 }
 
 function my_symbol() { // do not rename this function. Treat this similarly to a Draw function
-  rect(0 ,0, rect_width, rect_height);
+drawRings()
+
+drawPetals()
+
+drawCentre()
+
+}
+
+function drawRings() {
+  noStroke()
+  fill(255, 170, 150) //light pink
+  ellipse(ellipseX, ellipseY, RingSize, RingSize)
+  
+  fill(255, 200, 170) // same as background colour
+  ellipse(ellipseX, ellipseY, RingSize-25, RingSize-25)
+}
+
+function drawPetals() {
+  fill(255, 130, 140) //bottom petal  pink
+  ellipse(100, 140, 40, 90)
+
+  fill(255, 130, 140) //right petal  pink
+  ellipse(140, 100, 90, 40)
+
+  fill(255, 130, 140) //left petal  pink
+  ellipse(60, 100, 90, 40)
+
+  fill(255, 130, 140) //top petal  pink
+  ellipse(100, 60, 40, 90)
+}
+
+function drawCentre() {
+  fill(255, 170, 150) //light pink
+  ellipse(ellipseX, ellipseY, CentreSize, CentreSize)
 }
