@@ -1,8 +1,9 @@
 //your parameter variables go here!
-let ellipseX  = 100;
-let ellipseY = 100;
-var RingSize = 100; // 150
-var CentreSize = 30;
+let ellipseX  = 100; //100
+let ellipseY = 100; //100
+var RingSize = 150; // 150
+var CentreSize = 30; //40
+// var petalColour = color(255, 130, 140) on line 44
 
 function setup_wallpaper(pWallpaper) {
   pWallpaper.output_mode(DEVELOP_GLYPH);
@@ -40,16 +41,17 @@ function drawRings() {
 }
 
 function drawPetals() {
-  fill(255, 130, 140) //bottom petal  pink
+  var petalColour = color(255, 130, 140) // brighter Pink
+  fill(petalColour) //bottom petal  
   ellipse(100, 140, 40, 90)
 
-  fill(255, 130, 140) //right petal  pink
+  fill(petalColour) //right petal 
   ellipse(140, 100, 90, 40)
 
-  fill(255, 130, 140) //left petal  pink
+  fill(petalColour) //left petal  
   ellipse(60, 100, 90, 40)
 
-  fill(255, 130, 140) //top petal  pink
+  fill(petalColour) //top petal  
   ellipse(100, 60, 40, 90)
 }
 
