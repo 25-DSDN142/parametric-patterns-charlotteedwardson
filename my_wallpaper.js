@@ -25,9 +25,7 @@ function wallpaper_background() {
 function my_symbol() { // do not rename this function. Treat this similarly to a Draw function
 drawRings()
 
-drawPetals()
-
-drawCentre()
+drawFlower()
 
 }
 
@@ -40,7 +38,7 @@ function drawRings() {
   ellipse(ellipseX, ellipseY, RingSize-25, RingSize-25)
 }
 
-function drawPetals() {
+function drawFlower() {
   var petalColour = color(255, 130, 140) // brighter Pink
   fill(petalColour) //bottom petal  
   ellipse(100, 140, 40, 90)
@@ -53,9 +51,7 @@ function drawPetals() {
 
   fill(petalColour) //top petal  
   ellipse(100, 60, 40, 90)
-}
 
-function drawCentre() {
   fill(255, 170, 150) //light pink
   ellipse(ellipseX, ellipseY, CentreSize, CentreSize)
 }
