@@ -23,10 +23,14 @@ function wallpaper_background() {
 }
 
 function my_symbol() { // do not rename this function. Treat this similarly to a Draw function
+push();
+translate(0, 0);
 drawRings()
 
 drawFlower()
 
+drawCentre()
+pop();
 }
 
 function drawRings() {
@@ -36,6 +40,12 @@ function drawRings() {
   
   fill(255, 200, 170) // same as background colour
   ellipse(ellipseX, ellipseY, RingSize-25, RingSize-25)
+
+  fill(255, 170, 150) //light pink
+  ellipse(ellipseX, ellipseY, RingSize-50, RingSize-50)
+
+  fill(255, 200, 170) // same as background colour
+  ellipse(ellipseX, ellipseY, RingSize-75, RingSize-75)
 }
 
 function drawFlower() {
@@ -52,6 +62,26 @@ function drawFlower() {
   fill(petalColour) //top petal  
   ellipse(100, 60, 40, 90)
 
-  fill(255, 170, 150) //light pink
+  push();
+  fill(petalColour) //top petal  
+  rotate(45);
+  ellipse(145, 45, 35, 70)
+
+  rotate(180);
+  fill(petalColour) //top petal  
+  ellipse(-145, 45, 35, 70)
+
+  rotate(90);
+  fill(petalColour) //top petal  
+  ellipse(0, 100, 35, 70)
+
+  rotate(0);
+  fill(petalColour) //top petal  
+  ellipse(0, 185, 35, 70) 
+  pop();
+}
+
+function drawCentre() {
+ fill(255, 170, 150) //light pink
   ellipse(ellipseX, ellipseY, CentreSize, CentreSize)
 }
