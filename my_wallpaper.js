@@ -2,7 +2,7 @@
 let ellipseX  = 100; //100
 let ellipseY = 100; //100
 var RingSize = 150; // 150
-var CentreSize = 35; //40
+var CentreSize = 40; //40
 // var petalColour = color(255, 130, 140) on line 44
 
 function setup_wallpaper(pWallpaper) {
