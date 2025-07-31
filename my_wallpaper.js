@@ -11,11 +11,14 @@ var petal2Size = 160; //160
 var RingSize = 150; // 150
 var CentreSize = 40; //40
 
-var BorderX = 50; //50
-var BorderY = 50; //50
+var BorderX = 1; //50
+var BorderY = 1; //50
 
 var ColourPetals = 2; //1
 var ColourBorder = 2; //1
+
+var ringColour1 = 2; //1
+var ringColour2 = 2; //1 
 
 // var petalColour = color(255, 130, 140) on line 44
 
@@ -24,7 +27,7 @@ function setup_wallpaper(pWallpaper) {
   pWallpaper.output_mode(GRID_WALLPAPER);
   
   pWallpaper.resolution(FIT_TO_SCREEN);
-  pWallpaper.show_guide(true); //set this to false when you're ready to print
+  pWallpaper.show_guide(false); //set this to false when you're ready to print
 
   //Grid settings
   pWallpaper.grid_settings.cell_width  = 200;
@@ -51,20 +54,31 @@ drawBorder()
 }
 
 function drawRings() {
+   var ringColour1 = color(255, 170, 150) // brighter Pink
+
+   var ringColour2 = color(255, 200, 170) // same as background colour
+  
+  if(ringColour1 == 1){
+    ringColour1 = color(255, 170, 150); //Original Pink
+  }
+  else if(ringColour1 == 2) {
+    ringColour1 = color(20, 140, 190); //Purple
+  }
+
   noStroke()
-  fill(255, 170, 150) //light pink
+  fill(ringColour1) //light pink
   ellipse(ellipseX, ellipseY, RingSize+50, RingSize+50)
 
   fill(255, 200, 170) // same as background colour
   ellipse(ellipseX, ellipseY, RingSize+25, RingSize+25)
 
-  fill(255, 170, 150) //light pink
+  fill(ringColour1) //light pink
   ellipse(ellipseX, ellipseY, RingSize, RingSize)
   
   fill(255, 200, 170) // same as background colour
   ellipse(ellipseX, ellipseY, RingSize-25, RingSize-25)
 
-  fill(255, 170, 150) //light pink
+  fill(ringColour1) //light pink
   ellipse(ellipseX, ellipseY, RingSize-50, RingSize-50)
 
   fill(255, 200, 170) // same as background colour
