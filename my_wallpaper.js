@@ -5,14 +5,14 @@ var ellipseY = 100; //100
 var petalX = 100; //100
 var petalY = 100; //100
 
-var petal1Size = 45; //45
-var petal2Size = 160; //160
+var petal1Size = 55; //45
+var petal2Size = 140; //160
 
-var RingSize = 150; // 150
+var RingSize = 125; // 150
 var CentreSize = 40; //40
 
-var BorderX = 1; //50
-var BorderY = 1; //50
+var BorderX = 35; //50
+var BorderY = 35; //50
 
 var ColourPetals = 2; //1
 var ColourBorder = 2; //1
@@ -38,7 +38,7 @@ function setup_wallpaper(pWallpaper) {
 }
 
 function wallpaper_background() {
-  background(200, 180, 220); //very light pink colour: 255, 200, 170
+  background(120, 140, 230); //very light pink colour: 255, 200, 170
 }
 
 function my_symbol() { // do not rename this function. Treat this similarly to a Draw function
@@ -62,15 +62,15 @@ function drawRings() {
     ColourRing1 = color(255, 170, 150); //255, 170, 150
   }
   else if(ringColour1 == 2) {
-    ColourRing1 = color(150, 110, 190); //
+    ColourRing1 = color(150, 200, 120); //
   }
 
-var ColourRing2 = color(255, 200, 170) // 255, 200, 170
+var ColourRing2 = color(200, 180, 220) // 255, 200, 170
   if(ringColour2 == 1){
-    ColourRing2 = color(255, 200, 170); //255, 200, 170
+    ColourRing2 = color(200, 180, 220); //255, 200, 170
   }
   else if(ringColour2 == 2) {
-    ColourRing2 = color(150, 150, 190); //
+    ColourRing2 = color(170, 210, 170); //150, 150, 190
   }
 
   noStroke()
@@ -99,7 +99,7 @@ function drawFlower() {
     petalColour = color(255, 130, 140); //Original Pink
   }
   else if(ColourPetals == 2) {
-    petalColour = color(200, 190, 190); //BLUE/purple
+    petalColour = color(250, 120, 180); //BLUE/purple200, 190, 190
   }
 
   fill(petalColour) //Vertical petal  
@@ -120,7 +120,7 @@ function drawFlower() {
 }
 
 function drawCentre() {
-  fill(125, 120, 170) //light pink: 255, 170, 150
+  fill(255, 220, 100) //light pink: 255, 170, 150
   ellipse(ellipseX, ellipseY, CentreSize, CentreSize)
 }
 
@@ -131,7 +131,7 @@ function drawBorderCorner() {
     BorderColour = color(157, 235, 138); //Original Pink
   }
   else if(ColourBorder == 2) {
-    BorderColour = color(170, 120, 190); //Purple
+    BorderColour = color(140, 160, 250); //Purple
   }
   fill(BorderColour) 
   vertex(0, 0);
