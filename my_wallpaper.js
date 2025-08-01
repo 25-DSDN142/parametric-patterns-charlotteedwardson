@@ -20,7 +20,9 @@ var ColourBorder = 2; //1
 var ringColour1 = 2; //1
 var ringColour2 = 2; //1 
 
-// var petalColour = color(255, 130, 140) on line 44
+// var ColourRing1 = color(255, 130, 140) on line 57
+// var ColourRing2 = color(255, 130, 140) on line 68
+// var petalColour = color(255, 130, 140) on line 89
 
 function setup_wallpaper(pWallpaper) {
   //pWallpaper.output_mode(DEVELOP_GLYPH);
@@ -36,7 +38,7 @@ function setup_wallpaper(pWallpaper) {
 }
 
 function wallpaper_background() {
-  background(255, 200, 170); //very light pink colour
+  background(200, 180, 220); //very light pink colour: 255, 200, 170
 }
 
 function my_symbol() { // do not rename this function. Treat this similarly to a Draw function
@@ -54,34 +56,40 @@ drawBorder()
 }
 
 function drawRings() {
-   var ringColour1 = color(255, 170, 150) // brighter Pink
-
-   var ringColour2 = color(255, 200, 170) // same as background colour
+  var ColourRing1 = color(255, 170, 150) // 255, 170, 150
   
   if(ringColour1 == 1){
-    ringColour1 = color(255, 170, 150); //Original Pink
+    ColourRing1 = color(255, 170, 150); //255, 170, 150
   }
   else if(ringColour1 == 2) {
-    ringColour1 = color(20, 140, 190); //Purple
+    ColourRing1 = color(150, 110, 190); //
+  }
+
+var ColourRing2 = color(255, 200, 170) // 255, 200, 170
+  if(ringColour2 == 1){
+    ColourRing2 = color(255, 200, 170); //255, 200, 170
+  }
+  else if(ringColour2 == 2) {
+    ColourRing2 = color(150, 150, 190); //
   }
 
   noStroke()
-  fill(ringColour1) //light pink
+  fill(ColourRing1) //light pink
   ellipse(ellipseX, ellipseY, RingSize+50, RingSize+50)
 
-  fill(255, 200, 170) // same as background colour
+  fill(ColourRing2) // same as background colour
   ellipse(ellipseX, ellipseY, RingSize+25, RingSize+25)
 
-  fill(ringColour1) //light pink
+  fill(ColourRing1) //light pink
   ellipse(ellipseX, ellipseY, RingSize, RingSize)
   
-  fill(255, 200, 170) // same as background colour
+  fill(ColourRing2) // same as background colour
   ellipse(ellipseX, ellipseY, RingSize-25, RingSize-25)
 
-  fill(ringColour1) //light pink
+  fill(ColourRing1) //light pink
   ellipse(ellipseX, ellipseY, RingSize-50, RingSize-50)
 
-  fill(255, 200, 170) // same as background colour
+  fill(ColourRing2) // same as background colour
   ellipse(ellipseX, ellipseY, RingSize-75, RingSize-75)
 }
 
@@ -91,7 +99,7 @@ function drawFlower() {
     petalColour = color(255, 130, 140); //Original Pink
   }
   else if(ColourPetals == 2) {
-    petalColour = color(200, 140, 190); //Purple
+    petalColour = color(200, 190, 190); //BLUE/purple
   }
 
   fill(petalColour) //Vertical petal  
@@ -112,7 +120,7 @@ function drawFlower() {
 }
 
 function drawCentre() {
-  fill(255, 170, 150) //light pink
+  fill(125, 120, 170) //light pink: 255, 170, 150
   ellipse(ellipseX, ellipseY, CentreSize, CentreSize)
 }
 
@@ -123,7 +131,7 @@ function drawBorderCorner() {
     BorderColour = color(157, 235, 138); //Original Pink
   }
   else if(ColourBorder == 2) {
-    BorderColour = color(200, 120, 190); //Purple
+    BorderColour = color(170, 120, 190); //Purple
   }
   fill(BorderColour) 
   vertex(0, 0);
