@@ -11,8 +11,8 @@ var petal2Size = 140; //160
 var RingSize = 125; // 150
 var CentreSize = 40; //40
 
-var BorderX = 35; //50
-var BorderY = 35; //50
+var BorderX = 0.1; //50
+var BorderY = 0.1; //50
 
 var ColourPetals = 2; //1
 var ColourBorder = 2; //1
@@ -34,11 +34,11 @@ function setup_wallpaper(pWallpaper) {
   //Grid settings
   pWallpaper.grid_settings.cell_width  = 200;
   pWallpaper.grid_settings.cell_height = 200;
-  pWallpaper.grid_settings.row_offset  =  0;
+  pWallpaper.grid_settings.row_offset  =  100;
 }
 
 function wallpaper_background() {
-  background(120, 140, 230); //very light pink colour: 255, 200, 170
+  background(130, 160, 240); //very light pink colour: 255, 200, 170 blue: 120, 140, 230
 }
 
 function my_symbol() { // do not rename this function. Treat this similarly to a Draw function
@@ -67,7 +67,7 @@ function drawRings() {
 
 var ColourRing2 = color(200, 180, 220) // 255, 200, 170
   if(ringColour2 == 1){
-    ColourRing2 = color(200, 180, 220); //255, 200, 170
+    ColourRing2 = color(255, 200, 170); //255, 200, 170
   }
   else if(ringColour2 == 2) {
     ColourRing2 = color(170, 210, 170); //150, 150, 190
@@ -120,7 +120,7 @@ function drawFlower() {
 }
 
 function drawCentre() {
-  fill(255, 220, 100) //light pink: 255, 170, 150
+  fill(255, 170, 150) //light pink: 255, 170, 150
   ellipse(ellipseX, ellipseY, CentreSize, CentreSize)
 }
 
@@ -128,10 +128,10 @@ function drawBorderCorner() {
   noStroke();
   var BorderColour = color(157, 235, 138) //light green
   if(ColourBorder == 1){
-    BorderColour = color(157, 235, 138); //Original Pink
+    BorderColour = color(255, 135, 138); //Original Pink
   }
   else if(ColourBorder == 2) {
-    BorderColour = color(140, 160, 250); //Purple
+    BorderColour = color(155, 190, 240); //Purple
   }
   fill(BorderColour) 
   vertex(0, 0);
