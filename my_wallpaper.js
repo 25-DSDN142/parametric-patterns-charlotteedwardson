@@ -5,21 +5,21 @@ var ellipseY = 100; //100
 var petalX = 100; //100
 var petalY = 100; //100
 
-var petal1Size = 45; //45
-var petal2Size = 160; //160
+var petal1Size = 55; //45
+var petal2Size = 140; //160
 
-var RingSize = 160; //150
-var CentreSize = 80; //40
+var RingSize = 125; // 150
+var CentreSize = 40; //40
 
-var BorderX = 45;//50
-var BorderY = 45; //50
+var BorderX = 0.1; //50
+var BorderY = 0.1; //50
 
 var ColourPetals = 2; //1
-var ColourBorder = 0; //1
+var ColourBorder = 2; //1
 
 var ringColour1 = 1; //1
 var ringColour2 = 1; //1 
-var WallColour = 2; //0
+var WallColour = 1; //0
 
 //  var Wallpapercolor = color( 255, 180, 220) on line 44
 // var ColourRing1 = color(255, 130, 140) on line 57
@@ -31,14 +31,15 @@ function setup_wallpaper(pWallpaper) {
   //pWallpaper.output_mode(DEVELOP_GLYPH);
   pWallpaper.output_mode(GRID_WALLPAPER);
   
-  pWallpaper.resolution(NINE_LANDSCAPE);
+  pWallpaper.resolution(A3);
   pWallpaper.show_guide(false); //set this to false when you're ready to print
 
   //Grid settings
   pWallpaper.grid_settings.cell_width  = 200;
   pWallpaper.grid_settings.cell_height = 200;
-  pWallpaper.grid_settings.row_offset  = 0;
+  pWallpaper.grid_settings.row_offset  =  0;
 }
+
 
 function wallpaper_background() {
   var Wallpapercolor = color(255, 120, 220) // Pink original
