@@ -5,21 +5,23 @@ var ellipseY = 100; //100
 var petalX = 100; //100
 var petalY = 100; //100
 
-var petal1Size = 55; //45
-var petal2Size = 140; //160
+var petal1Size = 45; //45
+var petal2Size = 160; //160
 
-var RingSize = 125; // 150
-var CentreSize = 40; //40
+var RingSize = 160; //150
+var CentreSize = 80; //40
 
-var BorderX = 0.1; //50
-var BorderY = 0.1; //50
+var BorderX = 45;//50
+var BorderY = 45; //50
 
 var ColourPetals = 2; //1
-var ColourBorder = 2; //1
+var ColourBorder = 0; //1
 
-var ringColour1 = 2; //1
-var ringColour2 = 2; //1 
+var ringColour1 = 1; //1
+var ringColour2 = 1; //1 
+var WallColour = 2; //0
 
+//  var Wallpapercolor = color( 255, 180, 220) on line 44
 // var ColourRing1 = color(255, 130, 140) on line 57
 // var ColourRing2 = color(255, 130, 140) on line 68
 // var petalColour = color(255, 130, 140) on line 89
@@ -29,17 +31,25 @@ function setup_wallpaper(pWallpaper) {
   //pWallpaper.output_mode(DEVELOP_GLYPH);
   pWallpaper.output_mode(GRID_WALLPAPER);
   
-  pWallpaper.resolution(FIT_TO_SCREEN);
+  pWallpaper.resolution(NINE_LANDSCAPE);
   pWallpaper.show_guide(false); //set this to false when you're ready to print
 
   //Grid settings
   pWallpaper.grid_settings.cell_width  = 200;
   pWallpaper.grid_settings.cell_height = 200;
-  pWallpaper.grid_settings.row_offset  =  100;
+  pWallpaper.grid_settings.row_offset  = 0;
 }
 
 function wallpaper_background() {
-  background(130, 160, 240); //very light pink colour: 255, 200, 170 blue: 120, 140, 230
+  var Wallpapercolor = color(255, 120, 220) // Pink original
+  
+  if(WallColour == 1){
+    Wallpapercolor = color( 140, 160, 230); // Blue
+  }
+  else if(WallColour == 2) {
+    Wallpapercolor = color(235, 140, 250); // Purple 
+  }
+  background(Wallpapercolor); //very light pink colour: 255, 180, 220 blue: 120, 140, 230
 }
 
 function my_symbol() { // do not rename this function. Treat this similarly to a Draw function
@@ -57,21 +67,21 @@ drawBorder()
 }
 
 function drawRings() {   //Creates rings/circles for the backdrop of the flower
-  var ColourRing1 = color(255, 170, 150) // 255, 170, 150
+  var ColourRing1 = color(255, 140, 150) // 255, 170, 150
   
   if(ringColour1 == 1){
-    ColourRing1 = color(255, 170, 150); //255, 170, 150
+    ColourRing1 = color(155, 170, 150); //
   }
   else if(ringColour1 == 2) {
-    ColourRing1 = color(150, 200, 120); //
+    ColourRing1 = color(220, 120, 250); //
   }
 
-var ColourRing2 = color(200, 180, 220) // 255, 200, 170
+var ColourRing2 = color(255, 140, 220) // 255, 200, 170
   if(ringColour2 == 1){
-    ColourRing2 = color(255, 200, 170); //255, 200, 170
+    ColourRing2 = color(155, 200, 170); //255, 200, 170
   }
   else if(ringColour2 == 2) {
-    ColourRing2 = color(170, 210, 170); //150, 150, 190
+    ColourRing2 = color(240, 100, 240); //150, 150, 190
   }
 
   noStroke()
@@ -95,12 +105,12 @@ var ColourRing2 = color(200, 180, 220) // 255, 200, 170
 }
 
 function drawFlower() {  //Creates the flower petals
-  var petalColour = color(255, 130, 140) // brighter Pink
+  var petalColour = color(250, 110, 210) // purple
   if(ColourPetals == 1){
-    petalColour = color(255, 130, 140); //Original Pink
+    petalColour = color(220, 100, 240); 
   }
   else if(ColourPetals == 2) {
-    petalColour = color(250, 120, 180); //BLUE/purple200, 190, 190
+    petalColour = color(250, 120, 180); 
   }
 
   fill(petalColour) //Vertical petal  
@@ -127,9 +137,9 @@ function drawCentre() { //Creates the flower pitsil
 
 function drawBorderCorner() { //Creates the border pattern in the corners around the flower
   noStroke();
-  var BorderColour = color(157, 235, 138) //light green
+  var BorderColour = color(157, 215, 158) //light green
   if(ColourBorder == 1){
-    BorderColour = color(255, 135, 138); //Original Pink
+    BorderColour = color(255, 135, 200); //Original Pink
   }
   else if(ColourBorder == 2) {
     BorderColour = color(155, 190, 240); //Purple
