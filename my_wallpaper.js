@@ -23,6 +23,7 @@ var ringColour2 = 2; //1
 // var ColourRing1 = color(255, 130, 140) on line 57
 // var ColourRing2 = color(255, 130, 140) on line 68
 // var petalColour = color(255, 130, 140) on line 89
+// var BorderColour = color(157, 235, 138) on line 130
 
 function setup_wallpaper(pWallpaper) {
   //pWallpaper.output_mode(DEVELOP_GLYPH);
@@ -55,7 +56,7 @@ drawBorder()
 
 }
 
-function drawRings() {
+function drawRings() {   //Creates rings/circles for the backdrop of the flower
   var ColourRing1 = color(255, 170, 150) // 255, 170, 150
   
   if(ringColour1 == 1){
@@ -74,26 +75,26 @@ var ColourRing2 = color(200, 180, 220) // 255, 200, 170
   }
 
   noStroke()
-  fill(ColourRing1) //light pink
+  fill(ColourRing1)
   ellipse(ellipseX, ellipseY, RingSize+50, RingSize+50)
 
-  fill(ColourRing2) // same as background colour
+  fill(ColourRing2) 
   ellipse(ellipseX, ellipseY, RingSize+25, RingSize+25)
 
-  fill(ColourRing1) //light pink
+  fill(ColourRing1) 
   ellipse(ellipseX, ellipseY, RingSize, RingSize)
   
-  fill(ColourRing2) // same as background colour
+  fill(ColourRing2) 
   ellipse(ellipseX, ellipseY, RingSize-25, RingSize-25)
 
-  fill(ColourRing1) //light pink
+  fill(ColourRing1) 
   ellipse(ellipseX, ellipseY, RingSize-50, RingSize-50)
 
-  fill(ColourRing2) // same as background colour
+  fill(ColourRing2) 
   ellipse(ellipseX, ellipseY, RingSize-75, RingSize-75)
 }
 
-function drawFlower() {
+function drawFlower() {  //Creates the flower petals
   var petalColour = color(255, 130, 140) // brighter Pink
   if(ColourPetals == 1){
     petalColour = color(255, 130, 140); //Original Pink
@@ -119,12 +120,12 @@ function drawFlower() {
   pop();
 }
 
-function drawCentre() {
-  fill(255, 170, 150) //light pink: 255, 170, 150
+function drawCentre() { //Creates the flower pitsil
+  fill(255, 170, 150) //original light pink: 255, 170, 150
   ellipse(ellipseX, ellipseY, CentreSize, CentreSize)
 }
 
-function drawBorderCorner() {
+function drawBorderCorner() { //Creates the border pattern in the corners around the flower
   noStroke();
   var BorderColour = color(157, 235, 138) //light green
   if(ColourBorder == 1){
